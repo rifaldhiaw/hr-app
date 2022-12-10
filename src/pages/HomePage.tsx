@@ -1,3 +1,8 @@
-export const HomePage = () => {
-  return <div>HomePage</div>;
-};
+import { rootRoute } from "../AppLayout";
+
+export const homeRoute = rootRoute.createRoute({
+  path: "/",
+  component: () => {
+    return <div>Home Page</div>;
+  },
+});
