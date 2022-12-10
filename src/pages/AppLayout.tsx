@@ -1,9 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
-import { createRouteConfig, Link, Outlet } from "@tanstack/react-router";
+import { Link, Outlet } from "@tanstack/react-router";
 import { Fragment } from "react";
 import { classNames } from "../utils";
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <div>
       <header className="flex items-stretch bg-slate-100 h-16 px-20">
@@ -83,15 +83,15 @@ function NavAvatar() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <Link
+                  to="account"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
                   Account settings
-                </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
@@ -141,9 +141,3 @@ function NavAvatar() {
     </Menu>
   );
 }
-
-const rootRoute = createRouteConfig({
-  component: AppLayout,
-});
-
-export const routeConfig = rootRoute.addChildren([]);
