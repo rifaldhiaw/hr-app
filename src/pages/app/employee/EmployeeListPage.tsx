@@ -1,30 +1,20 @@
 import { useMatch } from "@tanstack/react-router";
 import { FC } from "react";
-import { Employee } from "../types/employeeType";
-import { formatDate, getEmployeeAvatarUrl, pb } from "../utils";
-import { employeeRoute } from "./EmployeePage";
+import { employeeListRoute } from "../../../App";
+import { Employee } from "../../../types/employeeType";
+import { formatDate, getEmployeeAvatarUrl } from "../../../utils";
 
-export const employeeListRoute = employeeRoute.createRoute({
-  path: "/",
-  loader: async () => {
-    const employeePagenated = await pb
-      .collection("employees")
-      .getList<Employee>(1, 100);
+export const EmployeeListPage = () => {
+  const { loaderData } = useMatch(employeeListRoute.id);
 
-    return { employeePagenated };
-  },
-  component: () => {
-    const { loaderData } = useMatch(employeeListRoute.id);
-
-    return (
-      <div className="flex gap-8 flex-wrap content-center justify-center items-end">
-        {loaderData.employeePagenated.items.map((employee) => (
-          <EmployeeCard key={employee.id} employee={employee} />
-        ))}
-      </div>
-    );
-  },
-});
+  return (
+    <div className="flex gap-8 flex-wrap content-center justify-center items-end">
+      {loaderData.employeePagenated.items.map((employee) => (
+        <EmployeeCard key={employee.id} employee={employee} />
+      ))}
+    </div>
+  );
+};
 
 const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
   const { loaderData } = useMatch(employeeListRoute.id);

@@ -23,6 +23,7 @@ specifiers:
   tailwindcss: ^3.2.4
   typescript: ^4.9.3
   vite: ^4.0.0
+  zod: ^3.19.1
 
 dependencies:
   '@hassanmojab/react-modern-calendar-datepicker': 3.1.7_biqbaboplfbrettd7655fr4n2y
@@ -36,6 +37,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.40.0_react@18.2.0
+  zod: 3.19.1
 
 devDependencies:
   '@tanstack/react-router-devtools': 0.0.1-beta.36_ehyabz2tztjac45y5r4sukz5ja
@@ -1139,3 +1141,7 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+
+  /zod/3.19.1:
+    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
+    dev: false
