@@ -1,11 +1,10 @@
 import { useMatch } from "@tanstack/react-router";
 import { FC } from "react";
-import { employeeListRoute } from "../../../App";
 import { Employee } from "../../../types/employeeType";
 import { formatDate, getEmployeeAvatarUrl } from "../../../utils";
 
 export const EmployeeListPage = () => {
-  const { loaderData } = useMatch(employeeListRoute.id);
+  const { loaderData } = useMatch("/app/employee/");
 
   return (
     <div className="flex gap-8 flex-wrap content-center justify-center items-end">
@@ -17,7 +16,7 @@ export const EmployeeListPage = () => {
 };
 
 const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
-  const { loaderData } = useMatch(employeeListRoute.id);
+  const { loaderData } = useMatch("/app/employee/");
 
   const department = loaderData.departments.find(
     (department) => department.id === employee.departmentId
@@ -31,8 +30,8 @@ const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
   );
 
   return (
-    <div className="card w-72 bg-base-100 shadow-xl">
-      <figure className="mx-auto w-32 h-32 mt-5 rounded-full border border-solid border-slate-400">
+    <div className="flex card w-72 bg-base-100 shadow-xl">
+      <figure className="mx-auto w-20 h-20 md:w-32 md:h-32  mt-5 rounded-full border border-solid border-slate-400">
         <img
           src={getEmployeeAvatarUrl({
             id: employee.id,
@@ -44,7 +43,7 @@ const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title my-2">{employee.name}</h2>
-        <table className="text-left">
+        <table className="text-left text-sm md:text-md">
           <tbody>
             {makeRow("ID", employee.id)}
             {makeRow("Department", department?.name ?? "")}
