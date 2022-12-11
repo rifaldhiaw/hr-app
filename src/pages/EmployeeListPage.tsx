@@ -42,21 +42,23 @@ const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
 
   return (
     <div className="card w-72 bg-base-100 shadow-xl">
-      <figure className="mx-20 w-32 h-32 mt-5 rounded-full border border-solid border-slate-400">
+      <figure className="mx-auto w-32 h-32 mt-5 rounded-full border border-solid border-slate-400">
         <img
           src={getEmployeeAvatarUrl({
             id: employee.id,
             avatar: employee.avatar,
           })}
           alt="avatar"
+          className="w-full h-full object-cover"
         />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title my-2">{employee.name}</h2>
         <table className="text-left">
           <tbody>
-            {makeRow("Join Date", formatDate(employee.joinDate))}
+            {makeRow("ID", employee.id)}
             {makeRow("Department", department?.name ?? "")}
+            {makeRow("Join Date", formatDate(employee.joinDate))}
             {makeRow("Phone", employee.phoneNumber)}
           </tbody>
         </table>
