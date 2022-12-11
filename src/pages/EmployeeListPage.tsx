@@ -1,6 +1,5 @@
 import { useMatch } from "@tanstack/react-router";
 import { FC } from "react";
-import { Department } from "../types/departmentType";
 import { Employee } from "../types/employeeType";
 import { formatDate, getEmployeeAvatarUrl, pb } from "../utils";
 import { employeeRoute } from "./EmployeePage";
@@ -12,17 +11,13 @@ export const employeeListRoute = employeeRoute.createRoute({
       .collection("employees")
       .getList<Employee>(1, 100);
 
-    const departments = await pb
-      .collection("departments")
-      .getFullList<Department>();
-
-    return { employeePagenated, departments };
+    return { employeePagenated };
   },
   component: () => {
     const { loaderData } = useMatch(employeeListRoute.id);
 
     return (
-      <div className="flex gap-5 flex-wrap">
+      <div className="flex gap-8 flex-wrap content-center justify-center items-end">
         {loaderData.employeePagenated.items.map((employee) => (
           <EmployeeCard key={employee.id} employee={employee} />
         ))}
@@ -39,20 +34,21 @@ const EmployeeCard: FC<{ employee: Employee }> = ({ employee }) => {
   );
 
   const makeRow = (label: string, value: string) => (
-    <tr>
+    <tr className="text-slate-500">
       <td className="pb-1 pr-4 font-semibold">{label}</td>
       <td>{value}</td>
     </tr>
   );
 
   return (
-    <div className="card w-80 bg-base-100 shadow-xl">
-      <figure className="mx-20 mt-5 rounded-full border border-solid border-slate-200">
+    <div className="card w-72 bg-base-100 shadow-xl">
+      <figure className="mx-20 w-32 h-32 mt-5 rounded-full border border-solid border-slate-400">
         <img
           src={getEmployeeAvatarUrl({
             id: employee.id,
             avatar: employee.avatar,
           })}
+          alt="avatar"
         />
       </figure>
       <div className="card-body items-center text-center">

@@ -1,12 +1,19 @@
-import { Outlet, useMatch } from "@tanstack/react-router";
+import { Link, Outlet } from "@tanstack/react-router";
 import { rootRoute } from "../AppLayout";
+import { Department } from "../types/departmentType";
+import { pb } from "../utils";
 import { employeeAddRoute } from "./EmployeeAddPage";
 
 export const employeeRoute = rootRoute.createRoute({
   path: "/employee",
-  component: () => {
-    const { Link } = useMatch(employeeRoute.id);
+  loader: async () => {
+    const departments = await pb
+      .collection("departments")
+      .getFullList<Department>();
 
+    return { departments };
+  },
+  component: () => {
     return (
       <div className="flex flex-col items-stretch">
         <div className="flex items-center gap-3">

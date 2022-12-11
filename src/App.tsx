@@ -1,4 +1,7 @@
+import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import { createReactRouter, RouterProvider } from "@tanstack/react-router";
+import dayjs from "dayjs";
+import objectSupport from "dayjs/plugin/objectSupport";
 import React from "react";
 import { rootRoute } from "./AppLayout";
 import { accountRoute } from "./pages/AccountPage";
@@ -8,6 +11,8 @@ import { employeeRoute } from "./pages/EmployeePage";
 import { hiringRoute } from "./pages/HiringPage";
 import { homeRoute } from "./pages/HomePage";
 import { reportRoute } from "./pages/ReportPage";
+
+dayjs.extend(objectSupport);
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"

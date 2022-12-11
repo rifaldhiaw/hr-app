@@ -3,7 +3,7 @@ import { createRouteConfig, Link, Outlet } from "@tanstack/react-router";
 export const rootRoute = createRouteConfig({
   component: () => {
     return (
-      <div>
+      <div className="flex flex-col h-screen">
         <header className="flex items-stretch bg-slate-100 h-16 px-20">
           <nav className="flex items-center">
             <Link to="/" className="font-semibold text-xl mr-10">
@@ -54,7 +54,8 @@ export const rootRoute = createRouteConfig({
           </div>
           <NavAvatar />
         </header>
-        <div className="px-20 py-10">
+
+        <div className="flex-1 md:px-20 pt-10 pb-40 overflow-auto">
           <Outlet />
         </div>
       </div>

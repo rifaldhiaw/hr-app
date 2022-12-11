@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@hassanmojab/react-modern-calendar-datepicker': ^3.1.7
   '@headlessui/react': ^1.7.5
   '@heroicons/react': ^2.0.13
   '@tanstack/react-router': 0.0.1-beta.38
@@ -18,11 +19,13 @@ specifiers:
   prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-hook-form: ^7.40.0
   tailwindcss: ^3.2.4
   typescript: ^4.9.3
   vite: ^4.0.0
 
 dependencies:
+  '@hassanmojab/react-modern-calendar-datepicker': 3.1.7_biqbaboplfbrettd7655fr4n2y
   '@headlessui/react': 1.7.5_biqbaboplfbrettd7655fr4n2y
   '@heroicons/react': 2.0.13_react@18.2.0
   '@tanstack/react-router': 0.0.1-beta.38_biqbaboplfbrettd7655fr4n2y
@@ -32,6 +35,7 @@ dependencies:
   pocketbase: 0.8.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.40.0_react@18.2.0
 
 devDependencies:
   '@tanstack/react-router-devtools': 0.0.1-beta.36_ehyabz2tztjac45y5r4sukz5ja
@@ -251,6 +255,17 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@hassanmojab/react-modern-calendar-datepicker/3.1.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-dX/FXGcvIW31dgA1fcFJkHmIx3k4AqX166SfCQ6weBb0ZLr6C/f5YzcXVop19ifX18ezEw11Xb+l02JGj4+R6g==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      jalaali-js: 1.2.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@headlessui/react/1.7.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-UZSxOfA0CYKO7QDT5OGlFvesvlR1SKkawwSjwQJwt7XQItpzRKdE3ZUQxHcg4LEz3C0Wler2s9psdb872ynwrQ==}
@@ -788,6 +803,10 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
 
+  /jalaali-js/1.2.6:
+    resolution: {integrity: sha512-io974va+Qyu+UfuVX3UIAgJlxLhAMx9Y8VMfh+IG00Js7hXQo1qNQuwSiSa0xxco0SVgx5HWNkaiCcV+aZ8WPw==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -937,6 +956,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-hook-form/7.40.0_react@18.2.0:
+    resolution: {integrity: sha512-0rokdxMPJs0k9bvFtY6dbcSydyNhnZNXCR49jgDr/aR03FDHFOK6gfh8ccqB3fl696Mk7lqh04xdm+agqWXKSw==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
