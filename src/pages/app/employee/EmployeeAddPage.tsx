@@ -3,12 +3,11 @@ import { useMatch } from "@tanstack/react-router";
 import dayjs from "dayjs";
 import { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { employeeAddRoute } from "../../../App";
 import { pb } from "../../../utils";
 
 export const EmployeeAddPage = () => {
   const { register, watch, handleSubmit, control } = useForm();
-  const { loaderData, navigate } = useMatch(employeeAddRoute.id);
+  const { loaderData, navigate } = useMatch("/app/employee/add");
 
   const onSubmit = async (data: any) => {
     data.joinDate = dayjs(data.joinDate).toJSON();
@@ -36,7 +35,7 @@ export const EmployeeAddPage = () => {
 
   return (
     <form
-      className="flex gap-1 flex-col bg-base-100 text-base-content"
+      className="flex gap-1 flex-col bg-base-100 text-base-content px-10 md:px-0"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex flex-col md:flex-row gap-10">

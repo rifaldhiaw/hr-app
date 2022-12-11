@@ -1,11 +1,10 @@
 import { Link, Outlet } from "@tanstack/react-router";
-import { employeeAddRoute } from "../../App";
 
 export const EmployeePage = () => {
   return (
     <div className="flex flex-col items-stretch">
-      <div className="flex items-center gap-3">
-        <Link className="btn btn-square btn-ghost" to={employeeAddRoute.id}>
+      <div className="flex items-center gap-3 px-7 md:px-0">
+        <Link className="btn btn-square btn-ghost" to={"/app/employee/add"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

@@ -34,12 +34,12 @@ export const HomePage = () => {
 
   return (
     <div className="flex h-screen items-stretch">
-      <div className="flex-1">
+      <div className="flex-1 hidden md:block">
         <img src="/hr_go.jpg" className="w-full h-full object-cover" />
       </div>
 
       {/* content */}
-      <div className="flex-1 justify-center px-20 overflow-y-auto">
+      <div className="flex-1 justify-center md:px-20 overflow-y-auto">
         <h1 className="text-6xl font-extrabold mt-20 mb-5 text-center">
           HR Go
         </h1>

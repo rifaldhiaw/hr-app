@@ -5,7 +5,7 @@ export const AppPage = () => {
   return (
     <div className="flex flex-col h-screen">
       <header className="flex items-stretch bg-slate-100 h-16 px-20">
-        <nav className="flex items-center">
+        <nav className="flex items-center overflow-x-auto">
           <Link to="/" className="font-extrabold text-xl mr-10">
             HR Go
           </Link>
