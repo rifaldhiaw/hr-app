@@ -1,14 +1,6 @@
 import { createRouteConfig, Link, Outlet } from "@tanstack/react-router";
-import { pb } from "./utils";
 
 export const rootRoute = createRouteConfig({
-  loader: async () => {
-    const departmentsResult = await pb
-      .collection("departments")
-      .getList(1, 100);
-
-    return { departmentsResult };
-  },
   component: () => {
     return (
       <div>

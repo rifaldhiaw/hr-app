@@ -2,6 +2,8 @@ import { createReactRouter, RouterProvider } from "@tanstack/react-router";
 import React from "react";
 import { rootRoute } from "./AppLayout";
 import { accountRoute } from "./pages/AccountPage";
+import { employeeAddRoute } from "./pages/EmployeeAddPage";
+import { employeeListRoute } from "./pages/EmployeeListPage";
 import { employeeRoute } from "./pages/EmployeePage";
 import { hiringRoute } from "./pages/HiringPage";
 import { homeRoute } from "./pages/HomePage";
@@ -20,7 +22,7 @@ const TanStackRouterDevtools =
       );
 
 export const routeConfig = rootRoute.addChildren([
-  employeeRoute,
+  employeeRoute.addChildren([employeeListRoute, employeeAddRoute]),
   homeRoute,
   hiringRoute,
   reportRoute,
