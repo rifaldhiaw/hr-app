@@ -1,4 +1,4 @@
-import { useMatch } from "@tanstack/react-router";
+import { Link, useMatch } from "@tanstack/react-router";
 import { FC } from "react";
 import { Employee } from "../../../types/employeeType";
 import { formatDate, getEmployeeAvatarUrl } from "../../../utils";
@@ -7,10 +7,38 @@ export const EmployeeListPage = () => {
   const { loaderData } = useMatch("/app/employee/");
 
   return (
-    <div className="flex gap-8 flex-wrap content-center justify-center items-end">
-      {loaderData.employeePagenated.items.map((employee) => (
-        <EmployeeCard key={employee.id} employee={employee} />
-      ))}
+    <div className="flex flex-col">
+      <div className="flex items-center gap-3 px-7 md:px-0">
+        <div className="font-semibold text-xl breadcrumbs">
+          <ul>
+            <li>
+              <Link to="/app/employee">Employee</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex-1"></div>
+        <Link className="btn gap-2" to={"/app/employee/add"}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path fill="currentColor" d="M11 19v-6H5v-2h6V5h2v6h6v2h-6v6Z" />
+          </svg>
+          Add New
+        </Link>
+      </div>
+
+      <div className="divider"></div>
+
+      <div className="flex gap-8 flex-wrap content-center justify-center items-end">
+        {loaderData.employeePagenated.items.map((employee) => (
+          <EmployeeCard key={employee.id} employee={employee} />
+        ))}
+      </div>
     </div>
   );
 };
