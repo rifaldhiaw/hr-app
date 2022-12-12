@@ -4,16 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently 'pnpm:dev:*'",
+    "dev:vite": "vite",
+    "dev:pocketbase": "./pocketbase_bin serve",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@hassanmojab/react-modern-calendar-datepicker": "^3.1.7",
-    "@headlessui/react": "^1.7.5",
-    "@heroicons/react": "^2.0.13",
     "@tanstack/react-router": "0.0.1-beta.38",
-    "@tanstack/react-table": "^8.7.0",
     "daisyui": "^2.43.0",
     "dayjs": "^1.11.7",
     "pocketbase": "^0.8.3",
@@ -29,6 +28,7 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
     "postcss": "^8.4.19",
     "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4",
